@@ -170,15 +170,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST" &&
 
   <label for="name">Full Name</label>
   <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name)?>">
-  <span > <?php  echo $nameError; ?></span>
+  <span style="color:red;"> <?php  echo $nameError; ?></span>
 
   <label for="email">Email</label>
+  <!--حوّل الرموز الخاصة إلى صيغة آمنة للعرض في HTML. -->
   <input type="email" id="email" name="email" value="<?php  echo htmlspecialchars($email)?>">
-  <span> <?php  echo $emailError ;?></span>
+  <span style="color:red;"> <?php  echo $emailError ;?></span>
 
   <label for="mobile">Mobile</label>
   <input type="tel" id="mobile" name="mobile" placeholder="0791234567" value="<?php echo htmlspecialchars($mobile)   ?>">
-   <span>  <?php echo $mobileError;?></span>
+   <span style="color:red;">   <?php echo $mobileError;?></span>
 
 
   <label for="governorate">Governorate</label>
@@ -190,7 +191,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST" &&
     <option value="Aqaba" <?php   if($governorate =="Aqaba" ) echo "selected";?>>Aqaba</option>
     <option value="Zarqa" <?php if($governorate=="Zarqa") echo "selected";?>>Zarqa</option>
   </select>
-    <span> <?php  echo $governorateError; ?></span>
+    <span style="color:red;"> <?php  echo $governorateError; ?></span>
 
 
   <label>Track</label>
@@ -210,7 +211,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST" &&
     Backend
   </label>
 
-  <span> <?php echo  $trackError;?></span>
+  <span style="color:red;"> <?php echo  $trackError;?></span>
 
   <label>Skills you already have</label>
 
@@ -229,7 +230,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST" &&
     JavaScript
   </label>
 
-  <span>   <?php  echo  $skillError; ?></span>
+  <span style="color:red;">   <?php  echo  $skillError; ?></span>
 
   <label for="message">Why do you want to join? (optional)</label>
   <textarea id="message" name="message" rows="4"> <?php echo htmlspecialchars($message);?></textarea>
@@ -238,7 +239,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST" &&
     <input type="checkbox" name="agree" <?php if($agree=="on") echo "checked";?>>
     I agree to the academy terms
   </label>
-  <span><?php echo $agreeError;?></span>
+  <span style="color:red;"><?php echo $agreeError;?></span>
 
   <button type="submit">Register</button>
   <p><?php echo $success; ?></p>
